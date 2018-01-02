@@ -19,8 +19,8 @@ source:
     - 0003-Ensure-that-clobber-breaks-hard-links.patch
 
 build:
-  number: 5
   disable_pip: True
+  number: 1
   entry_points:
     - pip = pip:main
 
