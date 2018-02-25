@@ -1,0 +1,30 @@
+From 2df29bcd74c5b8bbb2051f88826a104fd9fdbb39 Mon Sep 17 00:00:00 2001
+From: Nehal J Wani <nehaljw.kkd1@gmail.com>
+Date: Sun, 25 Feb 2018 01:53:18 -0600
+Subject: [PATCH 3/3] Ensure that clobber() breaks hard links
+
+---
+ pip/wheel.py | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/pip/wheel.py b/pip/wheel.py
+index 9ac9dff..6932217 100644
+--- a/pip/wheel.py
++++ b/pip/wheel.py
+@@ -315,6 +315,13 @@ def move_wheel_files(name, req, wheeldir, user=False, home=None, root=None,
+                 # uninstalled.
+                 ensure_dir(destdir)
+ 
++                # Ensure that the destination file does not exist. This is
++                # required so that we break a hard link instead of replacing
++                # the contents in place
++                # xref: https://github.com/conda/conda/issues/6861
++                if os.path.lexists(destfile):
++                    os.unlink(destfile)
++
+                 # We use copyfile (not move, copy, or copy2) to be extra sure
+                 # that we are not moving directories over (copyfile fails for
+                 # directories) as well as to ensure that we are not copying
+-- 
+1.8.3.1
+

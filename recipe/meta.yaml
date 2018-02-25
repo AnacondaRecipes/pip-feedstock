@@ -16,9 +16,10 @@ source:
   patches:
     - 0001-update-vendorings-to-match-master.patch            # [win]
     - 0002-fix-up-references-to-vendored-requests-deps.patch  # [win]
+    - 0003-Ensure-that-clobber-breaks-hard-links.patch
 
 build:
-  number: 4
+  number: 5
   disable_pip: True
   entry_points:
     - pip = pip:main
