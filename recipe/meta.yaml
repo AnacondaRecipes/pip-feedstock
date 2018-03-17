@@ -1,6 +1,6 @@
 {% set name = "pip" %}
-{% set version = "9.0.1" %}
-{% set sha256 = "09f243e1a7b461f654c26a725fa373211bb7ff17a9300058b205c61658ca940d" %}
+{% set version = "9.0.2" %}
+{% set sha256 = "88110a224e9d30e5d76592a0b2130ef10e7e67a6426e8617bb918fffbfe91fe5" %}
 
 package:
   name: {{ name|lower }}
@@ -20,7 +20,7 @@ source:
 
 build:
   disable_pip: True
-  number: 1
+  number: 0
   entry_points:
     - pip = pip:main
 
