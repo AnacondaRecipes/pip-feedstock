@@ -10,6 +10,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - 0003-Ensure-that-clobber-breaks-hard-links.patch
 
   # We update  windows to avoid path length issues.  Requests was the offender, with vendoring its stuff, too.
   #    Requests has unvendored in more recent versions, so updating the vendoring is enough to fix things.
