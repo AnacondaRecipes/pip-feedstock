@@ -1,6 +1,6 @@
 {% set name = "pip" %}
-{% set version = "9.0.2" %}
-{% set sha256 = "88110a224e9d30e5d76592a0b2130ef10e7e67a6426e8617bb918fffbfe91fe5" %}
+{% set version = "9.0.3" %}
+{% set sha256 = "7bf48f9a693be1d58f49f7af7e0ae9fe29fd671cde8a55e6edca3581c4ef5796" %}
 
 package:
   name: {{ name|lower }}
