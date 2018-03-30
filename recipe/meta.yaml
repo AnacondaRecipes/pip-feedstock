@@ -13,16 +13,9 @@ source:
   patches:
     - 0003-Ensure-that-clobber-breaks-hard-links.patch
 
-  # We update  windows to avoid path length issues.  Requests was the offender, with vendoring its stuff, too.
-  #    Requests has unvendored in more recent versions, so updating the vendoring is enough to fix things.
-  patches:
-    - 0001-update-vendorings-to-match-master.patch            # [win]
-    - 0002-fix-up-references-to-vendored-requests-deps.patch  # [win]
-    - 0003-Ensure-that-clobber-breaks-hard-links.patch
-
 build:
-  disable_pip: True
   number: 0
+  disable_pip: True
   entry_points:
     - pip = pip:main
 
