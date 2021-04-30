@@ -1,4 +1,4 @@
-{% set version = "21.0.1" %}
+{% set version = "21.1.1" %}
 {% set debug = os.environ.get('PY_INTERP_DEBUG', '') %}
 {% if debug != '' %}
   {% set debug = "_dbg" %}
@@ -15,7 +15,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
-  sha256: 99bbde183ec5ec037318e774b0d8ae0a64352fe53b2c7fd630be1d07e94f41e5
+  sha256: 51ad01ddcd8de923533b01a870e7b987c2eb4d83b50b89e1bf102723ff9fed8b
 
 build:
   number: 0
