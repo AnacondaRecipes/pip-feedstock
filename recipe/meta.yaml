@@ -1,4 +1,4 @@
-{% set version = "21.2.4" %}
+{% set version = "22.0.3" %}
 {% set debug = os.environ.get('PY_INTERP_DEBUG', '') %}
 {% if debug != '' %}
   {% set debug = "_dbg" %}
@@ -15,7 +15,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
-  sha256: 0eb8a1516c3d138ae8689c0c1a60fde7143310832f9dc77e11d8a4bc62de193b
+  sha256: f29d589df8c8ab99c060e68ad294c4a9ed896624f6368c5349d70aa581b333d0
 
 build:
   number: 0
