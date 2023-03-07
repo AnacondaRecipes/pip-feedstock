@@ -1,4 +1,4 @@
-{% set version = "22.3.1" %}
+{% set version = "23.0.1" %}
 
 # make sure to set CONDA_ADD_PIP_AS_PYTHON_DEPENDENCY=0 environ-variable before building it
 
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
-  sha256: 65fd48317359f3af8e593943e6ae1506b66325085ea64b706a998c6e83eeaf38
+  sha256: cd015ea1bfb0fcef59d8a286c1f8bebcb983f6317719d415dc5351efb7cd7024
 
 build:
   number: 0
