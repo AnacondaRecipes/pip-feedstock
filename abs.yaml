@@ -1,6 +1,6 @@
 # upload to a temp channel for testing
 channels:
-  cbouss: temp312 
+  ad-testing: py312 
 
 # the conda-build parameters to use for disabling --skip-existing
 build_parameters:
