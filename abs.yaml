@@ -1,0 +1,11 @@
+# upload to a temp channel for testing
+channels:
+  ad-testing: py312 
+
+# the conda-build parameters to use for disabling --skip-existing
+build_parameters:
+  - "--suppress-variables"
+  #- "--skip-existing"
+  - "--error-overlinking"
+  - "--error-overdepending"
+  - "--no-test"
