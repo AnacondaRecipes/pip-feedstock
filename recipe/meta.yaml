@@ -1,4 +1,4 @@
-{% set version = "23.1.2" %}
+{% set version = "23.2.1" %}
 
 # make sure to set CONDA_ADD_PIP_AS_PYTHON_DEPENDENCY=0 environ-variable before building it
 
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
-  sha256: 0e7c86f486935893c708287b30bd050a36ac827ec7fe5e43fe7cb198dd835fba
+  sha256: fb0bd5435b3200c602b5bf61d2d43c2f13c02e29c1707567ae7fbc514eb9faf2
 
 build:
   number: 0
@@ -41,6 +41,10 @@ about:
   license_family: MIT
   license_file: LICENSE.txt
   summary: PyPA recommended tool for installing Python packages
+  description: |
+    pip is the package installer for Python. 
+    You can use pip to install packages from the Python Package 
+    Index and other indexes.
   doc_url: https://pip.pypa.io/en/stable/
   dev_url: https://github.com/pypa/pip
 
@@ -51,3 +55,7 @@ extra:
     - pelson
     - ocefpaf
     - mingwandroid
+  skip-lints:
+    - uses_setup_py
+    - python_build_tool_in_run
+    - missing_pip_check
