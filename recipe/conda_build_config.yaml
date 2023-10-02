@@ -1,5 +1,0 @@
-python:
-  - "3.12"
-numpy:
-  # python 3.12
-  - 1.26
