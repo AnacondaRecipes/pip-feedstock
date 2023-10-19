@@ -1,6 +1,0 @@
-build_parameters:
-  - "--suppress-variables"
-  - "--error-overlinking"
-  - "--error-overdepending"
-  - "--python 3.12"
-  - "--numpy 1.26"
