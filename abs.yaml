@@ -1,0 +1,13 @@
+channels:
+- kirby-dev
+
+target_channels:
+- kirby-dev
+
+mark_private: True
+
+build_parameters:
+  - "--suppress-variables"
+  - "--skip-existing"
+  - "--error-overlinking"
+  - "--override-channels"
