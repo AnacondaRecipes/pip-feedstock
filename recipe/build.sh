@@ -1,6 +1,7 @@
 #!/bin/bash
 
-$PYTHON setup.py install --single-version-externally-managed --record record.txt
+# use the pip source to install itself
+PYTHONPATH="./src" $PYTHON -m pip install . --no-deps --no-build-isolation -vv
 
 cd $PREFIX/bin
 rm -f pip2* pip3*
