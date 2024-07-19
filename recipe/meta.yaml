@@ -1,5 +1,9 @@
 {% set version = "24.1.2" %}
 
+# When bootstrapping a new Python version build pip from a wheel.
+# Otherwise build from the source distribution.
+{% set bootstrap = "no" %}
+
 # make sure to set CONDA_ADD_PIP_AS_PYTHON_DEPENDENCY=0 environ-variable before building it
 
 package:
@@ -7,8 +11,14 @@ package:
   version: {{ version }}
 
 source:
+  {% if bootstrap != "yes" %}
   url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
   sha256: e5458a0b89f2755e0ee8c0c77613fe5273e05f337907874d64f13171a898a7ff
+  {% else %}
+  url: https://files.pythonhosted.org/packages/py3/p/pip/pip-{{ version }}-py3-none-any.whl
+  sha256: 7cd207eed4c60b0f411b444cd1464198fe186671c323b6cd6d433ed80fc9d247
+  {% endif %}
+
 
 build:
   number: 0
@@ -17,12 +27,16 @@ build:
   entry_points:
     - pip = pip._internal.cli.main:main
     - pip3 = pip._internal.cli.main:main
+  script_env:
+    - BOOTSTRAP_FROM_WHL={{ bootstrap }}
 
 requirements:
   host:
     - python
+    {% if bootstrap != "yes" %}
     - setuptools >=67.6.1
     - wheel
+    {% endif %}
   run:
     - python
 
