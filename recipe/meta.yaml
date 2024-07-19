@@ -2,7 +2,7 @@
 
 # When bootstrapping a new Python version build pip from a wheel.
 # Otherwise build from the source distribution.
-{% set bootstrap = "no" %}
+{% set bootstrap = "yes" %}
 
 # make sure to set CONDA_ADD_PIP_AS_PYTHON_DEPENDENCY=0 environ-variable before building it
 
