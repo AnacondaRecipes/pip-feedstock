@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # use the pip source to install itself
-PYTHONPATH="./src" $PYTHON -m pip install . -vv
+PYTHONPATH="./src" $PYTHON -m pip install --no-deps --no-build-isolation . -vv
 
 cd $PREFIX/bin
 rm -f pip2* pip3*
