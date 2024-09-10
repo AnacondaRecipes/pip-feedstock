@@ -1,5 +1,5 @@
-set PYTHONPATH=%SRC_DIR%\src
-%PYTHON% -m pip install --no-deps --no-build-isolation . -vv
+set PYTHONPATH=".\src"
+%PYTHON% -m pip install . -vv
 if errorlevel 1 exit 1
 
 cd %SCRIPTS%
