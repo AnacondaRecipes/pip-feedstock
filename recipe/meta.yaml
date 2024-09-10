@@ -30,6 +30,7 @@ test:
   commands:
     - pip -h
     - pip list
+    - pip check
   imports:
     - pip
 
@@ -43,6 +44,11 @@ about:
   dev_url: https://github.com/pypa/pip
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/49522
+    reason: Dependency for chainlit
+  recipe-maintainers:
+    - ianaobi
   recipe-maintainers:
     - jakirkham
     - msarahan
