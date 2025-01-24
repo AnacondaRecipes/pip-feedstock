@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
-  sha256: ebcb60557f2aefabc2e0f918751cd24ea0d56d8ec5445fe1807f1d2109660b99
+  sha256: ebcb60557f2aefabc2e0f918751cd24ea0d56d8ec5445fe1807f1d2109660b9
 
 build:
   number: 0
@@ -21,7 +21,7 @@ build:
 requirements:
   host:
     - python
-    - setuptools
+    - setuptools >=67.6.1
     - wheel
   run:
     - python
