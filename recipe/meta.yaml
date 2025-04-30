@@ -6,28 +6,33 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/pip/pip-{{ version }}.tar.gz
   sha256: 272bdd1289f80165e9070a4f881e8f9e1001bbb50378561d1af20e49bf5a2200
 
 build:
+  noarch: python
   number: 0
   disable_pip: true
-  skip: true  # [py<38]
   entry_points:
     - pip = pip._internal.cli.main:main
     - pip3 = pip._internal.cli.main:main
 
 requirements:
   host:
-    - python
-    - setuptools >=67.6.1
-    - wheel
-  run:
-    - python
+    - python >=3.13.0a0                    # [not with_setuptools_wheel]
+    - python >=3.9,<3.13.0a0               # [with_setuptools_wheel]
     - setuptools
     - wheel
+  run:
+    - python >=3.13.0a0                    # [not with_setuptools_wheel]
+    - python >=3.9,<3.13.0a0               # [with_setuptools_wheel]
+    - setuptools                           # [with_setuptools_wheel]
+    - wheel                                # [with_setuptools_wheel]
 
 test:
+  requires:
+    - python 3.9                           # [with_setuptools_wheel]
+    - python 3.13.0                        # [not with_setuptools_wheel]
   commands:
     - pip -h
     - pip list
