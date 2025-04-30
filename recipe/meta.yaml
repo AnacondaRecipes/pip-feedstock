@@ -1,7 +1,5 @@
 {% set version = "25.0" %}
 
-# make sure to set CONDA_ADD_PIP_AS_PYTHON_DEPENDENCY=0 environ-variable before building it
-
 package:
   name: pip
   version: {{ version }}
@@ -11,20 +9,20 @@ source:
   sha256: 8e0a97f7b4c47ae4a494560da84775e9e2f671d415d8d828e052efefb206b30b
 
 build:
+  noarch: python
   number: 0
   disable_pip: true
-  skip: True  # [py<38]
   entry_points:
     - pip = pip._internal.cli.main:main
     - pip3 = pip._internal.cli.main:main
 
 requirements:
   host:
-    - python
-    - setuptools >=67.6.1
+    - python >=3.8
+    - setuptools
     - wheel
   run:
-    - python
+    - python >=3.8
     - setuptools
     - wheel
 
@@ -32,30 +30,28 @@ test:
   commands:
     - pip -h
     - pip list
+    - pip check
   imports:
     - pip
 
 about:
-  home: https://pip.pypa.io
+  home: https://pip.pypa.io/en/stable/
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
   summary: PyPA recommended tool for installing Python packages
-  description: |
-    pip is the package installer for Python. 
-    You can use pip to install packages from the Python Package 
-    Index and other indexes.
-  doc_url: https://pip.pypa.io
+  doc_url: https://pip.pypa.io/en/stable/
   dev_url: https://github.com/pypa/pip
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/49522
+    reason: Dependency for chainlit
+  recipe-maintainers:
+    - ianaobi
   recipe-maintainers:
     - jakirkham
     - msarahan
     - pelson
     - ocefpaf
     - mingwandroid
-  skip-lints:
-    - uses_setup_py
-    - python_build_tool_in_run
-    - missing_pip_check
