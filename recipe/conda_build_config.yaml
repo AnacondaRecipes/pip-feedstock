@@ -1,0 +1,3 @@
+with_setuptools_wheel:
+  - true
+  - false
