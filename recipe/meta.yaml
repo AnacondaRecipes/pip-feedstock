@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   disable_pip: true
   entry_points:
     - pip = pip._internal.cli.main:main
@@ -19,20 +19,20 @@ build:
 
 requirements:
   host:
-    - python >=3.13.0a0                    # [not with_setuptools_wheel]
-    - python >=3.9,<3.13.0a0               # [with_setuptools_wheel]
+    - python >=3.14.0a0                    # [not with_setuptools_wheel]
+    - python >=3.9,<3.14.0a0               # [with_setuptools_wheel]
     - setuptools
     - wheel
   run:
-    - python >=3.13.0a0                    # [not with_setuptools_wheel]
-    - python >=3.9,<3.13.0a0               # [with_setuptools_wheel]
+    - python >=3.14.0a0                    # [not with_setuptools_wheel]
+    - python >=3.9,<3.14.0a0               # [with_setuptools_wheel]
     - setuptools                           # [with_setuptools_wheel]
     - wheel                                # [with_setuptools_wheel]
 
 test:
   requires:
     - python 3.9                           # [with_setuptools_wheel]
-    - python 3.13.0                        # [not with_setuptools_wheel]
+    - python 3.14.0                        # [not with_setuptools_wheel]
   commands:
     - pip -h
     - pip list
