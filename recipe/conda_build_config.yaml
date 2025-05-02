@@ -1,3 +1,4 @@
+# todo: re-enable with_setuptools_wheel false once python 3.14 is released.
 with_setuptools_wheel:
   - true
-  - false
+#  - false
