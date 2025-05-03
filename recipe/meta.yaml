@@ -1,4 +1,4 @@
-{% set version = "25.1" %}
+{% set version = "25.1.1" %}
 
 # make sure to set CONDA_ADD_PIP_AS_PYTHON_DEPENDENCY=0 environ-variable before building it
 package:
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pip/pip-{{ version }}.tar.gz
-  sha256: 272bdd1289f80165e9070a4f881e8f9e1001bbb50378561d1af20e49bf5a2200
+  sha256: 3de45d411d308d5054c2168185d8da7f9a2cd753dbac8acbfa88a8909ecd9077
 
 build:
   noarch: python
-  number: 2
+  number: 0
   disable_pip: true
   entry_points:
     - pip = pip._internal.cli.main:main
@@ -19,20 +19,20 @@ build:
 
 requirements:
   host:
-    - python >=3.14.0a0                    # [not with_setuptools_wheel]
-    - python >=3.9,<3.14.0a0               # [with_setuptools_wheel]
+    - python >=3.14.0a0  # [not with_setuptools_wheel]
+    - python >=3.9,<3.14.0a0  # [with_setuptools_wheel]
     - setuptools
     - wheel
   run:
-    - python >=3.14.0a0                    # [not with_setuptools_wheel]
-    - python >=3.9,<3.14.0a0               # [with_setuptools_wheel]
-    - setuptools                           # [with_setuptools_wheel]
-    - wheel                                # [with_setuptools_wheel]
+    - python >=3.14.0a0  # [not with_setuptools_wheel]
+    - python >=3.9,<3.14.0a0  # [with_setuptools_wheel]
+    - setuptools  # [with_setuptools_wheel]
+    - wheel  # [with_setuptools_wheel]
 
 test:
   requires:
-    - python 3.9                           # [with_setuptools_wheel]
-    - python 3.14.0                        # [not with_setuptools_wheel]
+    - python 3.9  # [with_setuptools_wheel]
+    - python 3.14.0  # [not with_setuptools_wheel]
   commands:
     - pip -h
     - pip list
