@@ -59,6 +59,6 @@ extra:
     - ocefpaf
     - mingwandroid
   skip-lints:
-    - uses_setup_py
     - python_build_tool_in_run
     - missing_pip_check
+    - python_build_tools_in_host
