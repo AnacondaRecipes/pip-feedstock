@@ -21,8 +21,7 @@ requirements:
   host:
     - python >=3.14.0a0                    # [not with_setuptools_wheel]
     - python >=3.9,<3.14.0a0               # [with_setuptools_wheel]
-    - setuptools
-    - wheel
+    - flit-core >=3.11,<4
   run:
     - python >=3.14.0a0                    # [not with_setuptools_wheel]
     - python >=3.9,<3.14.0a0               # [with_setuptools_wheel]
