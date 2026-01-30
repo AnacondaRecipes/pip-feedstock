@@ -30,7 +30,7 @@ requirements:
 
 test:
   requires:
-    - python 3.9                           # [with_setuptools_wheel]
+    - python 3.10                           # [with_setuptools_wheel]
     - python 3.14.0                        # [not with_setuptools_wheel]
   commands:
     - pip -h
