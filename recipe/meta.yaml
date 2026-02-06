@@ -23,7 +23,6 @@ requirements:
     - python
     - python >=3.9,<3.15.0a0  # [with_setuptools_wheel]
     - flit-core >=3.11,<4
-    - pip
   run:
     - python
     - python >=3.9,<3.15.0a0  # [with_setuptools_wheel]
