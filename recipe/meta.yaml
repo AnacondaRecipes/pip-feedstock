@@ -31,7 +31,9 @@ requirements:
 
 test:
   requires:
-    - python
+    # It's our lower bound from https://github.com/AnacondaRecipes/aggregate/blob/master/conda_build_config.yaml#L94
+    - python 3.10                          # [with_setuptools_wheel]
+    - python 3.14.0                        # [not with_setuptools_wheel]
   commands:
     - pip -h
     - pip list
