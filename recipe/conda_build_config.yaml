@@ -1,3 +1,11 @@
 with_setuptools_wheel:
   - true
   - false
+
+python:
+  - "3.10"
+  - "3.14"
+
+zip_keys:
+  - - python
+    - with_setuptools_wheel
