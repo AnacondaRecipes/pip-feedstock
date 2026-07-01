@@ -1,0 +1,15 @@
+# the conda-build parameters to use for disabling --skip-existing
+build_parameters:
+  - "--suppress-variables"
+  #- "--skip-existing"
+  - "--error-overlinking"
+  - "--error-overdepending"
+
+upload_channels:
+  - ad-testing
+
+channels:
+  - https://staging.continuum.io/pbp/fs/python-feedstock/pr232/44ecbd1
+
+build_env_vars:
+  ANACONDA_ROCKET_ENABLE_PY315: yes
