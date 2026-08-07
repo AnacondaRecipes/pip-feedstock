@@ -6,7 +6,7 @@ build_parameters:
   - "--error-overdepending"
 
 upload_channels:
-  - ad-testing
+  - ad-testing/label/py315
 
 channels:
   - https://staging.continuum.io/pbp/fs/flit-feedstock/pr19/6f9a4da
