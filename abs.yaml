@@ -11,6 +11,8 @@ upload_channels:
 channels:
   - https://staging.continuum.io/pbp/fs/flit-feedstock/pr19/6f9a4da
   - https://staging.continuum.io/pbp/fs/python-feedstock/pr239/59d1683
+  # python 3.15.0b4 run_export needs tk>=9.0.4 (not on defaults yet)
+  - https://staging.continuum.io/pbp/fs/tk-feedstock/pr16/156fa80
 
 build_env_vars:
   ANACONDA_ROCKET_ENABLE_PY315: yes
