@@ -1,0 +1,19 @@
+# the conda-build parameters to use for disabling --skip-existing
+build_parameters:
+  - "--suppress-variables"
+  #- "--skip-existing"
+  - "--error-overlinking"
+  - "--error-overdepending"
+  # Post-promote CI: PBP test harness 404s when multichannel has both
+  # ad-testing and ad-testing/label/py315 (concatenated channel URL).
+  # Artifacts were already tested on staging; skip re-test for channel retarget.
+  - "--no-test"
+
+upload_channels:
+  - ad-testing/label/py315
+
+channels:
+  - ad-testing/label/py315
+
+build_env_vars:
+  ANACONDA_ROCKET_ENABLE_PY315: yes
