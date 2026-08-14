@@ -9,8 +9,7 @@ upload_channels:
   - ad-testing/label/py315
 
 channels:
-  - https://staging.continuum.io/pbp/fs/flit-feedstock/pr19/309cb7e
-  - https://staging.continuum.io/pbp/fs/python-feedstock/pr239/966fd19
+  - ad-testing/label/py315
 
 build_env_vars:
   ANACONDA_ROCKET_ENABLE_PY315: yes
