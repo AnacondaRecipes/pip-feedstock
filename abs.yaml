@@ -9,10 +9,8 @@ upload_channels:
   - ad-testing/label/py315
 
 channels:
-  - https://staging.continuum.io/pbp/fs/flit-feedstock/pr19/3bf2c15
-  - https://staging.continuum.io/pbp/fs/python-feedstock/pr239/3e2270e
-  # python 3.15.0b4 run_export needs tk>=9.0.4 (not on defaults yet)
-  - https://staging.continuum.io/pbp/fs/tk-feedstock/pr16/156fa80
+  - https://staging.continuum.io/pbp/fs/flit-feedstock/pr19/309cb7e
+  - https://staging.continuum.io/pbp/fs/python-feedstock/pr239/966fd19
 
 build_env_vars:
   ANACONDA_ROCKET_ENABLE_PY315: yes
