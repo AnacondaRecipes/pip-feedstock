@@ -4,16 +4,16 @@ build_parameters:
   #- "--skip-existing"
   - "--error-overlinking"
   - "--error-overdepending"
-  # Post-promote CI: PBP test harness 404s when multichannel has both
-  # ad-testing and ad-testing/label/py315 (concatenated channel URL).
-  # Artifacts were already tested on staging; skip re-test for channel retarget.
+  # Staging rebuild: skip re-test; builds validate against python+flit staging.
   - "--no-test"
 
 upload_channels:
   - ad-testing/label/py315
 
+# Resolve python 3.15.0rc1 + flit 4.0.2 from PR staging (not yet on testing).
 channels:
-  - ad-testing/label/py315
+  - https://staging.continuum.io/pbp/fs/flit-feedstock/pr22/c3d2453
+  - https://staging.continuum.io/pbp/fs/python-feedstock/pr244/e3ff93e
 
 build_env_vars:
   ANACONDA_ROCKET_ENABLE_PY315: yes
