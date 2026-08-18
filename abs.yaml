@@ -4,14 +4,13 @@ build_parameters:
   #- "--skip-existing"
   - "--error-overlinking"
   - "--error-overdepending"
-  # Post-promote CI: PBP test harness 404s when multichannel has both
-  # ad-testing and ad-testing/label/py315 (concatenated channel URL).
-  # Artifacts were already tested on staging; skip re-test for channel retarget.
+  # Staging rebuild: skip re-test; builds validate against python+flit staging.
   - "--no-test"
 
 upload_channels:
   - ad-testing/label/py315
 
+# After promote: consume from testing
 channels:
   - ad-testing/label/py315
 
