@@ -10,10 +10,9 @@ build_parameters:
 upload_channels:
   - ad-testing/label/py315
 
-# Resolve python 3.15.0rc1 + flit 4.0.2 from PR staging (not yet on testing).
+# After promote: consume from testing
 channels:
-  - https://staging.continuum.io/pbp/fs/flit-feedstock/pr22/c3d2453
-  - https://staging.continuum.io/pbp/fs/python-feedstock/pr244/e3ff93e
+  - ad-testing/label/py315
 
 build_env_vars:
   ANACONDA_ROCKET_ENABLE_PY315: yes
