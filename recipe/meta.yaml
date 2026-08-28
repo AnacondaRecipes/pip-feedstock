@@ -1,5 +1,5 @@
 {% set name = "pip" %}
-{% set version = "26.1.2" %}
+{% set version = "26.2.1" %}
 
 # make sure to set CONDA_ADD_PIP_AS_PYTHON_DEPENDENCY=0 environ-variable before building it
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f49cd134c61cf2fd75e0ce2676db03e4054504a5a4986d00f8299ae632dc4605
+  sha256: f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f
 
 build:
   noarch: python
